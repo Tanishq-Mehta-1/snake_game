@@ -32,8 +32,6 @@ class vec2 {
 
 	vec2() : x(), y() {};
 	vec2(int X, int Y): x(X), y(Y) {};
-	
-
 };
 vec2 p;
 vec2 f;
