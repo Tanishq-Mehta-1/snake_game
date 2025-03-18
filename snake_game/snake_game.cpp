@@ -24,14 +24,17 @@ int h_score{};
 enum Direction {STOP = 0, UP,DOWN, LEFT, RIGHT};
 Direction dir;
 
-typedef struct vec2 {
+class vec2 {
+	public :
+	
 	int x;
 	int y;
 
-	struct vec2(int X, int Y): x(X), y(Y) {};
-	struct vec2() : x(), y() {};
+	vec2() : x(), y() {};
+	vec2(int X, int Y): x(X), y(Y) {};
+	
 
-} vec2;
+};
 vec2 p;
 vec2 f;
 
@@ -44,7 +47,6 @@ static void clearScreen() {
 	\033[H - moves cursor to beginning
 	\033[? 25l - hides the cursor 
 	*/
-
 }
 
 static void Setup() {
@@ -121,8 +123,7 @@ static void Logic() {
 		if (!tail.empty()) {
 			tail.push_back(tail.back());
 		} else 
-			tail.push_back(vec2(p.x - 1, p.y - 1));
-			
+			tail.push_back(vec2( p.x - 1, p.y - 1));
 
 		//generating the next fruit location
 		srand(time(nullptr));
